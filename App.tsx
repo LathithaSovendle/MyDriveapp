@@ -1,12 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Button  } from 'react-native';
 
 export default function App() {
-  return (
+const age = 16; 
+let feedback = '';
+
+if (age >= 18) {
+ feedback = 'You are allowed to drive.YAY!'
+}
+else{
+feedback = 'you are not allowed to drive yet.'
+}
+return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    {/*we use one bracket*/}
+      <Text style = {styles.response}>
+        {/*This is my message to be displayed to the user*/}
+        {feedback}</Text>
+      
+    </View>                                                                                          
   );
 }
 
@@ -17,4 +29,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  response:{
+    fontSize: 38,
+  }
 });
